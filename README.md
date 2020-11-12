@@ -10,5 +10,13 @@ For data analysis, general questions have been answered and graphically revealed
 
 Lastly, sentiment modelling is carried out where each step is outlined along with the results produced. 
 
-Addtionally, topic modelling is conducted using R programming language as shown in a separate file.  
+Addtionally, topic modelling is conducted using R programming language as shown in a separate file. Topic modelling is a kind of statistical modelling where the discovery of abstract ‘topics’ within a collection of text data or documents is made. It is a process where documents are analysed to discover in-depth insights. Latent Dirichlet Allocation (LDA) as an example of the topic model is a mechanism used to classify text in a document to a particular topic. It calculates a topic per document model and words per topic model, also known as Dirichlet distributions. In LDA, each word or phrase is linked to ‘k’ and perplexity is obtained from it which is a measure of how well a model predicts the document provided. This allows in uncovering latent semantic structures within the document. Lower values are mostly preferred and values less than a number of topics implies over-fitting. For finer observation, text pre-processing is recommended where punctuation and stop words are excluded from the document. 
+
+The following intuition is behind successfully implementing a topic model:
+1. First, a number of topics: k was selected.
+2. All possible words: w(vocab) were collected.
+3. For every tweet, each word was assigned to a topic.
+4. Finally, approximate distribution of all words across each topic results were obtained
+
+There were few steps there were carried out in R Studio as shown in the code file. After calling out the required topicmodels package, the tweets csv file was read by specifying a local file path. Next, the text file underwent the same procedure as it did while using Python i.e. data pre-processing such as conversion to lowercase, removal of stop words, punctuation marks, numbers and whitespace. After this, very rare terms (occurring in at least 2% of the tweets) were removed. Moreover, tweets that did not contain one of the remaining terms were removed. Finally, a document matrix was created out of corpus, the number of topic models was specified (5) and LDA was calculated as shown below. 
 
